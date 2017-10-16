@@ -30,6 +30,7 @@ class splunk::server::clustering (
       $available_sites = $clustering[available_sites]
       $site_replication_factor = $clustering[site_replication_factor]
       $site_search_factor = $clustering[site_search_factor]
+      $cluster_label = $clustering[cluster_label]
       $forwarder_site_failover = $clustering[forwarder_site_failover]
       file { [
         "${splunk_home}/etc/apps/${splunk_app_name}_slave_base",

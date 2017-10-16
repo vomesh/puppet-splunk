@@ -7,6 +7,7 @@ class splunk::params (
   $splunk_os_group = undef
   $splunk_bindip  = undef
   $lm             = undef
+  $lm_master      = undef
   $ds             = undef
   $inputport      = undef
   $outputs        = undef
