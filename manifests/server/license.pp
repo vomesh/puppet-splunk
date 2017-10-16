@@ -54,6 +54,7 @@ class splunk::server::license (
         mode    => $splunk_file_mode,
         replace => $splunk_app_replace,
         content => template("splunk/${splunk_app_name}/local/server.conf"),
+    }
   }
 }
 
