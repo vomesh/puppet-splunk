@@ -39,10 +39,17 @@ class splunk::server::license (
   if $lm_master == "true" {
     $splunk_lm_app_name = 'puppet_license_master_base'
     # Push the license(s) to the license server.
-    file { "${splunk_home}/etc/licenses/enterprise/":
+    file { "${splunk_home}/etc/licenses/enterprise/Splunk.lic":
+      ensure => present,
+      source => "puppet:///modules/${module_name}/licenses/Splunk.lic",
+      owner  => $splunk_os_user,
+      group  => $splunk_os_group,
+      mode   => $splunk_dir_mode,
+    }
+    file { ["${splunk_home}/etc/apps/${splunk_lm_app_name}",
+            "${splunk_home}/etc/apps/${splunk_lm_app_name}/${splunk_app_precedence_dir}",
+            "${splunk_home}/etc/apps/${splunk_lm_app_name}/metadata",]:
       ensure => directory,
-      recurse => true,
-      source => "puppet://modules/splunk/files/licenses/",
       owner  => $splunk_os_user,
       group  => $splunk_os_group,
       mode   => $splunk_dir_mode,
