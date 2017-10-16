@@ -42,7 +42,7 @@ class splunk::server::license (
     file { "${splunk_home}/etc/licenses/enterprise/":
       ensure => directory,
       recurse => true,
-      source => "puppet://modules/splunk/files/licenses/"
+      source => "puppet://modules/splunk/files/licenses/",
       owner  => $splunk_os_user,
       group  => $splunk_os_group,
       mode   => $splunk_dir_mode,
