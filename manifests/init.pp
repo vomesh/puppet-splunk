@@ -13,6 +13,7 @@ class splunk (
   $splunk_bindip              = $splunk::params::splunk_bindip,
   $lm                         = $splunk::params::lm,
   $lm_master                  = $splunk::params::lm_master,
+  $lm_license                 = $splunk::params::lm_license,
   $ds                         = $splunk::params::ds,
   $sslcompatibility           = $splunk::params::sslcompatibility,
   $ciphersuite_modern         = $splunk::params::ciphersuite_modern,
